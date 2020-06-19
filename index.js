@@ -13,9 +13,9 @@ const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: false,
 });
 const connection = mongoose.connection;
-mongoose.set('useFindAndModify', false);
 
 connection.once('open', () => {
   console.log('MongoDB connection established!');
