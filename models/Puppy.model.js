@@ -44,6 +44,12 @@ const puppySchema = new Schema({
   },
 });
 
+puppySchema.add({
+  image_src: {
+    type: String,
+  },
+});
+
 const Puppy = mongoose.model('Puppy', puppySchema);
 
 module.exports = Puppy;
