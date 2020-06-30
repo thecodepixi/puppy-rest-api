@@ -23,6 +23,11 @@ connection.once('open', () => {
   console.log('MongoDB connection established!');
 });
 
+// If the connection throws an error
+connection.on('error', (err) => {
+  console.log('Mongoose default connection error: ' + err);
+});
+
 const puppyRouter = require('./routers/puppy');
 app.use('/puppies', puppyRouter);
 
