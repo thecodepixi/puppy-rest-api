@@ -10,11 +10,13 @@ app.use(bodyParser.json());
 
 //Connect to MongoDB with Mongoose
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-});
+mongoose
+  .connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
+  .catch((err) => alert(err));
 const connection = mongoose.connection;
 
 connection.once('open', () => {
