@@ -16,7 +16,7 @@ mongoose
     useUnifiedTopology: true,
     useFindAndModify: false,
   })
-  .catch((err) => alert(err));
+  .catch((err) => console.error(err));
 const connection = mongoose.connection;
 
 connection.once('open', () => {
