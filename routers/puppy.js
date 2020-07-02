@@ -16,6 +16,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   const name = req.body.name;
   const breed = req.body.breed;
+  const image_src = req.body.image_src;
   const age = Number(req.body.age);
   const cute = req.body.cute;
   const well_behaved = req.body.well_behaved;
@@ -24,6 +25,7 @@ router.post('/', (req, res) => {
   const newPuppy = new Puppy({
     name,
     breed,
+    image_src,
     age,
     cute,
     well_behaved,
