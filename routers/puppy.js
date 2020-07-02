@@ -30,10 +30,11 @@ router.post('/', (req, res) => {
     adopted,
   });
 
-  newPuppy
-    .save()
-    .then(() => res.json(newPuppy))
-    .catch((err) => res.status(400).json('Error: ' + err));
+  newPuppy.save((err, data) => {
+    err
+      ? res.status(400).json('Error: ' + err)
+      : res.json({ message: 'Puppy created!', data: data });
+  });
 });
 
 router.put('/:id/update', (req, res) => {
