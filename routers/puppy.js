@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
 
   newPuppy
     .save()
-    .then(() => res.json('New puppy created!'))
+    .then(() => res.json(newPuppy))
     .catch((err) => res.status(400).json('Error: ' + err));
 });
 
